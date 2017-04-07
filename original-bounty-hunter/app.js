@@ -41,7 +41,6 @@ app.delete("/bounty/:name", function(req, res){
 app.put("/bounty/:id", function(req, res){
     var updatedBounty = req.body;
     for(var i = 0; i < bounties.length; i++) {
-//        console.log(updatedBounty)
         if(req.params.id === bounties[i]._id){
             for(var key in updatedBounty){
                 bounties[i][key] = updatedBounty[key] || bounties[i][key];
