@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="serverTodoApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Server Todo App</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--    My styling-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <a href="/#/home">Home</a>
+
+
+
+
+
+
+
+    <ng-view></ng-view>
+
+    <!--  angular cdn  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <!--  angular route cdn-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+
+    <!--    main js-->
+    <script src="main.js"></script>
+
+    <!--    home js-->
+    <script src="home/home.js"></script>
+
+    <!--  http services-->
+    <script src="services/httpServices.js"></script>
+
+</body>
+
+</html>
