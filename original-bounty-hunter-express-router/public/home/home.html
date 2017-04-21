@@ -1,4 +1,31 @@
-<div ng-repeat ="bounty in bounties">
-    <h1>{{bounty.fName}} {{bounty.lName}}</h1>
-    <p>{{bounty.cost | currency: "$"}}</p>
+<div class="container">
+    <form name="inputForm" novalidate class="col-sm-6 col-sm-offset-3 text-center">
+        <input ng-model="newItem.fName" class="form-control" name="fName" placeholder="First Name">
+        <input ng-model="newItem.lName" class="form-control" name="lName" placeholder="Last Name">
+        <input ng-model="newItem.cost" class="form-control" type="number" name="cost" placeholder="cost">
+        <button type="button" ng-click="addNewItem(newItem)" class="btn btn-primary">Submit</button>
+    </form>
 </div>
+<div class="container">
+    <div class="row">
+
+        <div class="col-xs-4" ng-repeat="bounty in bounties track by $index">
+            <div ng-hide="editing">
+                <h1>{{bounty.fName}} {{bounty.lName}}</h1>
+                <p>{{bounty.cost | currency: "$"}}</p>
+                <button id="delete" type="button" ng-click="remove($index, bounty._id)">remove</button>
+                <br />
+                <button type="button" ng-click="edit(bounty); editing = !editing" class="btn btn-primary">Edit</button>
+            </div>
+            <div ng-show="editing" name="inputForm" novalidate class="text-center">
+                <input ng-model="bounty.fName" class="form-control" name="fName" placeholder="First Name">
+                <input ng-model="bounty.lName" class="form-control" name="lName" placeholder="Last Name">
+                <input ng-model="bounty.cost" class="form-control" type="text" name="cost" placeholder="cost">
+                <button type="button" ng-click="save(bounty); editing = !editing" class="btn btn-primary">Save</button>
+                <button type="button" ng-click="edit(bounty); editing = !editing" class="btn btn-primary">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>

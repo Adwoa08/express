@@ -14,7 +14,6 @@ app.use(express.static(path.join(__dirname, "public")))
 
 
 app.use("/bounty", require("./routes/bounty"));
-app.use("/bounty2", require("./routes/bounty2"));
 
 
 app.listen(8000, function () {
